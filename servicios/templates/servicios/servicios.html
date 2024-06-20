@@ -1,0 +1,41 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+</head>
+<body>
+        {% for servicio in servicios %}
+
+        <section class="page-section clearfix">
+            <div class="container">
+              <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{servicio.imagen.url}}" alt="" style = "width: 50%;">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                  <h2 class="section-heading mb-4" >
+                    <span class="section-heading-lower">{{servicio.titulo}}</span>
+                    <span class="section-heading-upper">{{servicio.contenido}}</span>
+                  </h2>
+                  <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+          </section>
+        
+        {% endfor %}
+
+    
+    
+</body>
+</html>
+
+{% endblock %}
